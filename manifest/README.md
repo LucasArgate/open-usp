@@ -24,6 +24,13 @@ Segurança é uma preocupação fundamental, com suporte nativo para autenticaç
 
 ## 📚 Documentação
 
+### Manifesto e Visão
+
+- [Abstract](./ABSTRACT.md) - Manifesto fundador do USP (Português)
+- [Abstract](./ABSTRACT.en.md) - Founding manifesto of USP (English)
+
+### Especificações Técnicas
+
 **Português:**
 - [Especificação Técnica](./specification.md) - Detalhes técnicos completos do protocolo
 - [Contratos de Serviço](./contracts.md) - Definição de contratos e interfaces

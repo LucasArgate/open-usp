@@ -24,6 +24,13 @@ O USP foi projetado para preencher essa lacuna, permitindo que agentes de IA des
 
 A documentação completa do protocolo está disponível na pasta [`manifest/`](./manifest/):
 
+### Manifesto e Visão
+
+- [Abstract](./manifest/ABSTRACT.md) - Manifesto fundador do USP (Português)
+- [Abstract](./manifest/ABSTRACT.en.md) - Founding manifesto of USP (English)
+
+### Especificações Técnicas
+
 **Português:**
 - [Manifest Principal](./manifest/README.md) - Visão geral e especificação do protocolo
 - [Especificação Técnica](./manifest/specification.md) - Detalhes técnicos e implementação

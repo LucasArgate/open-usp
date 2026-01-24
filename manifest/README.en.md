@@ -27,6 +27,13 @@ Security is a fundamental concern, with native support for authentication, autho
 
 ## 📚 Documentation
 
+### Manifesto and Vision
+
+- [Abstract](./ABSTRACT.en.md) - Founding manifesto of USP (English)
+- [Abstract](./ABSTRACT.md) - Manifesto fundador do USP (Português)
+
+### Technical Specifications
+
 **English:**
 - [Technical Specification](./specification.en.md) - Complete technical details of the protocol
 - [Service Contracts](./contracts.en.md) - Contract and interface definitions
