@@ -9,6 +9,8 @@
 
 Open USP é uma implementação open-source do **Universal Service Protocol (USP)**, um protocolo universal projetado para conectar agentes de IA ao mundo real de serviços. Enquanto protocolos como o UCP (Universal Commerce Protocol) do Google resolvem efetivamente o problema para o varejo (produtos estáticos, envio padrão, preços fixos), há um grande vácuo na Economia de Serviços.
 
+> ⚠️ **Contexto Atual:** Com o crescimento exponencial de uso de agentes autônomos no Brasil (como o caso do **Moldbot**), a segurança se tornou inegociável. O USP implementa nativamente o **Security-by-Design** para garantir que agentes possam interagir com serviços críticos sem causar danos financeiros ou operacionais. Veja nossos [Princípios de Segurança](./manifest/security.md).
+
 O USP foi projetado para preencher essa lacuna, permitindo que agentes de IA descubram, entendam e interajam com serviços do mundo real através de uma interface padronizada e universal.
 
 ## 🎯 Objetivos

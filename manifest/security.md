@@ -6,24 +6,58 @@
 
 Este documento define os requisitos e mecanismos de segurança do Universal Service Protocol (USP), incluindo autenticação, autorização, criptografia e boas práticas.
 
-## 2. Princípios de Segurança
+## 2. Security-by-Design para Agentes Autônomos
 
-### 2.1 Security by Design
+Diferente de APIs tradicionais onde o cliente é um desenvolvedor confiável, o USP assume que o cliente é um Agente de IA probabilístico (como o **Moldbot** ou outros agentes autônomos). Portanto, a segurança deve ser **Semântica** e **Negociada**.
 
-Segurança é uma preocupação fundamental desde o design do protocolo:
-- Todas as comunicações devem ser criptografadas em produção
-- Autenticação é obrigatória para operações sensíveis
-- Autorização baseada em princípios de menor privilégio
-- Auditoria e logging de operações críticas
+### 2.1 Negociação de Capacidades ("O Handshake")
 
-### 2.2 Defense in Depth
+Em APIs tradicionais, scopes são estáticos. No USP, permissões são negociadas dinamicamente baseadas em confiança.
 
-Múltiplas camadas de segurança:
-- Transporte seguro (TLS/SSL)
-- Autenticação de mensagens
-- Autorização baseada em roles/permissions
-- Validação de entrada
-- Rate limiting
+**Fluxo:**
+1. **Agent Hello**: "Sou um Agente de Agendamento. Preciso de `read:calendar` e `write:appointment`."
+2. **Service Challenge**: Verifica reputação/assinatura.
+3. **Response**: 
+    - *Agente Confiável*: "Concedido total."
+    - *Agente Desconhecido*: "Concedido `read` apenas. `write` em modo `PROVISIONAL` (requer aprovação humana)."
+
+### 2.2 Modo Rascunho Nativo (Draft Mode)
+
+Agentes precisam "pensar" ou planejar sem causar efeitos colaterais no mundo real.
+
+**Especificação:**
+Verbos de mudança de estado (`POST`, `PUT`, `PATCH`) SUPORTAM um header ou flag (ex: `X-USP-Execution-Mode: Dry-Run`). O servidor processa a lógica de negócios, valida estoques e preços, mas **não commita** a transação, retornando o resultado hipotético (`200 OK` ou `202 Accepted`).
+
+### 2.3 Rate Limiting Semântico (Orçamento de Risco)
+
+Rate Limiting tradicional (Req/s) é insuficiente para IA. Uma IA pode destruir um negócio com 1 requisição por minuto se essa requisição tiver alto custo.
+
+**O "Risk Budget":**
+O limite é baseado em **Impacto de Negócio**, não tráfego.
+
+| Ação | Custo HTTP | **Custo de Risco** |
+| :--- | :--- | :--- |
+| `GET /slots` | 1 | 1 |
+| `POST /book` | 1 | **50** |
+| `DELETE /book` | 1 | **100** |
+
+Se um agente queima seu "Orçamento de Risco" (ex: cancelando 5 visitas), ele é bloqueado, mesmo com baixo volume HTTP.
+
+### 2.4 Identidade Verificável (Padrão Souls.md)
+
+Agentes devem provar sua identidade para acessar contextos sensíveis.
+Agentes apresentam um Manifesto Assinado (similar ao conceito de `souls.md`), contendo Dono, Propósito e Chave Pública. O Provider valida a assinatura e eleva a sessão de "Anônima" para "Personalizada" (ex: "Agente de Compras do Lucas Argate").
+
+### 2.5 Kill Switch (Encerramento Padronizado)
+
+Para garantir controle humano, todo provedor USP deve implementar um protocolo de revogação. Ao acionar o "Botão de Pânico", o servidor envia um sinal de `SIGTERM` padronizado, e o agente deve cessar operações imediatamente.
+
+---
+
+## 3. Implementação Técnica de Segurança (Defense in Depth)
+
+Além dos princípios agênticos acima, as camadas tradicionais de segurança são obrigatórias:
+
 
 ## 3. Autenticação
 
