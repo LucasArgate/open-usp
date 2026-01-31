@@ -223,13 +223,13 @@ Standardized calendar management.
 
 A major goal of USP is to enable established businesses (Service SMBs) to participate in the AI economy without rewriting their core software.
 
-Consider a company, **"Carrê Redes"**, running a custom ERP built in C# (MVC 4) with a SQL Server database containing data from 1991.
+Consider a company, **"Example Services"**, running a custom ERP built in C# (MVC 4) with a SQL Server database containing data from 1991.
 
 **Without USP:**
-An AI Agent (like Gemini or ChatGPT) cannot help a user hire Carrê. It can only summarize the website text. It cannot know if the technician is available or calculate the price based on the building's history.
+An AI Agent (like Gemini or ChatGPT) cannot help a user hire Example Services. It can only summarize the website text. It cannot know if the technician is available or calculate the price based on the building's history.
 
 **With USP:**
-Carrê implements a lightweight "Sidecar API" (The USP Adapter) that translates JSON requests into SQL queries.
+Example Services implements a lightweight "Sidecar API" (The USP Adapter) that translates JSON requests into SQL queries.
 
 1. **Agent:** "Quote for Building Solar, Campinas."
 2. **USP Adapter:** Receives request.
@@ -241,13 +241,17 @@ This pattern turns **Data Gravity** (years of accumulated business knowledge) in
 
 ---
 
-## 6. Security & Trust
+## 6. Security & Trust (Security-by-Design)
 
-Opening service quoting to autonomous agents requires robust safeguards.
+Opening service quoting to autonomous agents requires robust safeguards. USP implements a "Defense-in-Depth" layer:
 
-1. **Rate Limiting:** USP recommends strict token-bucket rate limiting to prevent competitors from "scraping" your pricing logic via the API.
-2. **Authentication:** Uses standard Bearer Tokens (OAuth2) or API Keys.
-3. **Human-in-the-Loop (HITL):** The protocol supports a `REQUIRES_APPROVAL` status for bookings, allowing a human dispatcher to review an Agent-created order before it is committed to the main schedule.
+1.  **Capabilities Negotiation (The Handshake):** Permissions are dynamically negotiated. Untrusted agents operate in limited scopes.
+2.  **Draft Mode (Dry Runs):** Native support for "SIMULATION" execution mode, preventing real-world side effects during planning.
+3.  **Semantic Rate Limiting (Risk Budget):** Limiting based on *Business Risk* (Currency value) rather than just request volume.
+4.  **Verifiable Identity:** Agents must sign requests with Identity Certificates (`Souls.md`) to access sensitive contexts.
+5.  **Kill Switch:** Standardized `SIGTERM` protocol for immediate Agent revocation.
+
+For the full security specification, see [SECURITY.md](../SECURITY.md).
 
 ---
 
@@ -287,7 +291,7 @@ We are looking for:
 USP is released under the **MIT License**. It is designed to be a community-driven standard, not a product of a single corporation.
 
 * **Maintainer:** [Your GitHub Profile / Organization]
-* **Initial Contributor:** Carrê Redes Technology Team
+* **Initial Contributor:** Open Source Community Tech Teams
 
 ---
 
@@ -319,7 +323,7 @@ USP is released under the **MIT License**. It is designed to be a community-driv
 `POST /usp/book { "quote_id": "q_123", "slot": "10:00", "customer": {...} }`
 `<= 201 Created { "order_id": "ORD-999", "status": "CONFIRMED" }`
 
-**User Result:** "Done. Carrê Redes will be there on Feb 1st at 10:00 AM. The cost is R$ 450.00."
+**User Result:** "Done. Example Services will be there on Feb 1st at 10:00 AM. The cost is R$ 450.00."
 
 ---
 
