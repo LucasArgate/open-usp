@@ -223,13 +223,13 @@ Gerenciamento de calendário padronizado.
 
 Um objetivo principal do USP é permitir que empresas estabelecidas (SMBs de Serviços) participem da economia de IA sem reescrever seu software principal.
 
-Considere uma empresa, **"Carrê Redes"**, rodando um ERP customizado construído em C# (MVC 4) com um banco de dados SQL Server contendo dados de 1991.
+Considere uma empresa, **"Exemplo Serviços"**, rodando um ERP customizado construído em C# (MVC 4) com um banco de dados SQL Server contendo dados de 1991.
 
 **Sem USP:**
-Um Agente de IA (como Gemini ou ChatGPT) não pode ajudar um usuário a contratar a Carrê. Ele só pode resumir o texto do website. Ele não pode saber se o técnico está disponível ou calcular o preço com base no histórico do prédio.
+Um Agente de IA (como Gemini ou ChatGPT) não pode ajudar um usuário a contratar a Exemplo Serviços. Ele só pode resumir o texto do website. Ele não pode saber se o técnico está disponível ou calcular o preço com base no histórico do prédio.
 
 **Com USP:**
-A Carrê implementa uma leve "Sidecar API" (O Adaptador USP) que traduz requisições JSON em consultas SQL.
+A Exemplo Serviços implementa uma leve "Sidecar API" (O Adaptador USP) que traduz requisições JSON em consultas SQL.
 
 1. **Agente:** "Cotação para Prédio Solar, Campinas."
 2. **Adaptador USP:** Recebe a requisição.
@@ -241,13 +241,17 @@ Este padrão transforma **Gravidade de Dados** (anos de conhecimento de negócio
 
 ---
 
-## 6. Segurança & Confiança
+## 6. Segurança & Confiança (Security-by-Design)
 
-Abrir cotação de serviços para agentes autônomos requer salvaguardas robustas.
+Abrir cotação de serviços para agentes autônomos requer salvaguardas robustas. O USP implementa uma camada de "Defesa em Profundidade":
 
-1. **Rate Limiting:** O USP recomenda rate limiting rigoroso com token-bucket para prevenir que concorrentes "raspem" sua lógica de preços via API.
-2. **Autenticação:** Usa Bearer Tokens padrão (OAuth2) ou API Keys.
-3. **Human-in-the-Loop (HITL):** O protocolo suporta um status `REQUIRES_APPROVAL` para reservas, permitindo que um despachante humano revise um pedido criado por Agente antes que seja confirmado na agenda principal.
+1.  **Handshake de Permissões (Capabilities Negotiation):** Permissões são negociadas dinamicamente entre Agente e Servidor. Agentes não verificados recebem escopos limitados.
+2.  **Modo Rascunho (Draft Mode):** Suporte nativo para execuções simuladas ("Dry Runs") sem efeitos colaterais no banco de dados.
+3.  **Rate Limiting Semântico (Risk Budget):** Limites baseados no *Impacto de Negócio* (Risco financeiro) e não apenas volume de requisições.
+4.  **Identidade Verificável:** Integração com certificados de identidade para agentes confiáveis.
+5.  **Kill Switch:** Padrão para revogação imediata de acesso em emergências.
+
+Para a especificação completa de segurança, consulte [SECURITY.md](../SECURITY.md).
 
 ---
 
@@ -287,7 +291,7 @@ Estamos procurando por:
 O USP é lançado sob a **Licença MIT**. É projetado para ser um padrão dirigido pela comunidade, não um produto de uma única corporação.
 
 * **Mantenedor:** [Seu Perfil GitHub / Organização]
-* **Contribuidor Inicial:** Equipe de Tecnologia Carrê Redes
+* **Contribuidor Inicial:** Equipes de Tecnologia da Comunidade Open Source
 
 ---
 
@@ -319,7 +323,7 @@ O USP é lançado sob a **Licença MIT**. É projetado para ser um padrão dirig
 `POST /usp/book { "quote_id": "q_123", "slot": "10:00", "customer": {...} }`
 `<= 201 Created { "order_id": "ORD-999", "status": "CONFIRMED" }`
 
-**Resultado para o Usuário:** "Pronto. A Carrê Redes estará lá em 1º de fevereiro às 10:00. O custo é R$ 450,00."
+**Resultado para o Usuário:** "Pronto. A Exemplo Serviços estará lá em 1º de fevereiro às 10:00. O custo é R$ 450,00."
 
 ---
 
