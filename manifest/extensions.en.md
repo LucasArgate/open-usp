@@ -164,9 +164,9 @@ extension:
 
 Extensions maintained by the USP project:
 
-- `usp.core:health-check`: Standardized health checks
-- `usp.core:metrics`: Basic metrics
-- `usp.core:logging`: Structured logging
+- `u.core:health-check`: Standardized health checks
+- `u.core:metrics`: Basic metrics
+- `u.core:logging`: Structured logging
 
 ## 9. Compatibility
 

@@ -209,9 +209,9 @@ extension:
 
 Extensões mantidas pelo projeto USP:
 
-- `usp.core:health-check`: Health checks padronizados
-- `usp.core:metrics`: Métricas básicas
-- `usp.core:logging`: Logging estruturado
+- `u.core:health-check`: Health checks padronizados
+- `u.core:metrics`: Métricas básicas
+- `u.core:logging`: Logging estruturado
 
 ### 8.2 Extensões da Comunidade
 

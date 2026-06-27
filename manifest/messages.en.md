@@ -129,14 +129,14 @@ Error codes follow the format:
 
 | Code | Description |
 |------|-------------|
-| `usp.core:INVALID_MESSAGE` | Invalid or malformed message |
-| `usp.core:UNAUTHORIZED` | Authentication failure |
-| `usp.core:FORBIDDEN` | Authorization failure |
-| `usp.core:NOT_FOUND` | Resource not found |
-| `usp.core:TIMEOUT` | Request timeout |
-| `usp.core:INTERNAL_ERROR` | Internal server error |
-| `usp.core:SERVICE_UNAVAILABLE` | Service unavailable |
-| `usp.core:RATE_LIMIT_EXCEEDED` | Rate limit exceeded |
+| `u.core:INVALID_MESSAGE` | Invalid or malformed message |
+| `u.core:UNAUTHORIZED` | Authentication failure |
+| `u.core:FORBIDDEN` | Authorization failure |
+| `u.core:NOT_FOUND` | Resource not found |
+| `u.core:TIMEOUT` | Request timeout |
+| `u.core:INTERNAL_ERROR` | Internal server error |
+| `u.core:SERVICE_UNAVAILABLE` | Service unavailable |
+| `u.core:RATE_LIMIT_EXCEEDED` | Rate limit exceeded |
 
 ## 5. Serialization
 

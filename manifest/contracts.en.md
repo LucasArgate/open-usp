@@ -135,7 +135,7 @@ Every service should implement a basic health check contract:
 contract:
   name: "HealthCheck"
   version: "1.0.0"
-  namespace: "usp.core"
+  namespace: "u.core"
   methods:
     - name: "ping"
       input: {}

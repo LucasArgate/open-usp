@@ -220,7 +220,7 @@ Todo serviço deve implementar um contrato básico de health check:
 contract:
   name: "HealthCheck"
   version: "1.0.0"
-  namespace: "usp.core"
+  namespace: "u.core"
   methods:
     - name: "ping"
       input: {}
@@ -249,7 +249,7 @@ Contrato para descoberta de serviços:
 contract:
   name: "ServiceDiscovery"
   version: "1.0.0"
-  namespace: "usp.core"
+  namespace: "u.core"
   methods:
     - name: "listServices"
       input:

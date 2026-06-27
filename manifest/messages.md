@@ -179,14 +179,14 @@ Códigos de erro seguem o formato:
 
 | Código | Descrição |
 |--------|-----------|
-| `usp.core:INVALID_MESSAGE` | Mensagem inválida ou malformada |
-| `usp.core:UNAUTHORIZED` | Falha de autenticação |
-| `usp.core:FORBIDDEN` | Falha de autorização |
-| `usp.core:NOT_FOUND` | Recurso não encontrado |
-| `usp.core:TIMEOUT` | Timeout na requisição |
-| `usp.core:INTERNAL_ERROR` | Erro interno do servidor |
-| `usp.core:SERVICE_UNAVAILABLE` | Serviço indisponível |
-| `usp.core:RATE_LIMIT_EXCEEDED` | Limite de taxa excedido |
+| `u.core:INVALID_MESSAGE` | Mensagem inválida ou malformada |
+| `u.core:UNAUTHORIZED` | Falha de autenticação |
+| `u.core:FORBIDDEN` | Falha de autorização |
+| `u.core:NOT_FOUND` | Recurso não encontrado |
+| `u.core:TIMEOUT` | Timeout na requisição |
+| `u.core:INTERNAL_ERROR` | Erro interno do servidor |
+| `u.core:SERVICE_UNAVAILABLE` | Serviço indisponível |
+| `u.core:RATE_LIMIT_EXCEEDED` | Limite de taxa excedido |
 
 ## 5. Serialização
 

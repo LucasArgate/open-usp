@@ -113,7 +113,7 @@ Authorization: Bearer <token>
 
 - Tokens devem ser validados antes do processamento
 - Tokens expirados devem ser rejeitados
-- Tokens inválidos devem retornar erro `usp.core:UNAUTHORIZED`
+- Tokens inválidos devem retornar erro `u.core:UNAUTHORIZED`
 
 ## 4. Autorização
 
@@ -139,7 +139,7 @@ Authorization: Bearer <token>
 Autorização é verificada após autenticação:
 1. Extrair claims/permissões do token
 2. Verificar se o usuário/serviço tem permissão para a operação
-3. Rejeitar com `usp.core:FORBIDDEN` se não autorizado
+3. Rejeitar com `u.core:FORBIDDEN` se não autorizado
 
 ## 5. Criptografia
 

@@ -12,6 +12,8 @@ Serviços não são produtos. Você não pode "adicionar ao carrinho" um reparo 
 
 O **Universal Services Protocol (USP)** é uma proposta de padrão aberto para definir como Agentes de IA descobrem, negociam, cotam e reservam serviços no mundo real. Ele fornece o "handshake" estruturado necessário para que um banco de dados SQL legado de 1991 transacione nativamente com um Agente de IA futurista em 2026.
 
+> **Posição na holarquia universal `u.*`.** O USP é a **esfera de serviços** (`u.service`) — um hólon autossuficiente e, ao mesmo tempo, o **tecido de execução/auditoria** que as demais esferas (UHP, UDP, UGP, UWP, UEP) reutilizam. Como "tudo vem de serviços", o USP é primordial; mas isso **não** o torna a raiz do namespace: ele é um par entre esferas. O campo comum a todas (erros, observabilidade, Ledger) vive em `u.core`. Ver o [mapa de protocolos](https://github.com/LucasArgate/uhp/tree/main/docs/protocolos/mapa-protocolos.md).
+
 ---
 
 ## 2. A "Falácia do Varejo" na IA
