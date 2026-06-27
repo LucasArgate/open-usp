@@ -8,7 +8,9 @@ This document defines the security requirements and mechanisms of the Universal 
 
 ## 2. Security-by-Design for Autonomous Agents
 
-Unlike traditional APIs where the client is a trusted developer, USP assumes the client is a probabilistic AI Agent (like **Moldbot** or others). Therefore, security controls must be **Semantic** and **Negotiated**.
+Unlike traditional APIs where the client is a trusted developer, USP assumes the client is a probabilistic AI Agent (like **Mobolt**, the new OpenClaw, or others). Therefore, security controls must be **Semantic** and **Negotiated**.
+
+> **Why this gets more urgent with WebMCP.** The agentic rise makes a golden rule explicit: **every tool exposed to an agent is a door someone will try to break in** — via prompt injection coming from an email, a comment, or any content the agent reads along the way. Chrome ships this warning alongside the [WebMCP origin trial](https://developer.chrome.com/blog/ai-webmcp-origin-trial) (tool security guidance). USP inherits this responsibility in the service world: **least privilege per tool**, **human-in-the-loop for high-risk actions**, and the premise that convenience for the agent and attack surface are, most of the time, the same vector.
 
 ### 2.1 Capabilities Negotiation ("The Handshake")
 

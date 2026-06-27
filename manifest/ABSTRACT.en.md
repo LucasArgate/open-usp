@@ -8,9 +8,13 @@
 
 We are entering the **Agentic Era** of the internet. Large Language Models (LLMs) are evolving from text generators into autonomous agents capable of executing tasks. While protocols like Google's UCP (Universal Commerce Protocol) are effectively solving the problem for **Retail** (static products, standard shipping, fixed prices), there is a massive vacuum in the **Service Economy**.
 
+> **The web is already embracing this shift.** In June 2026 Chrome opened the [**WebMCP**](https://developer.chrome.com/blog/ai-webmcp-origin-trial) origin trial (from Chrome 149): instead of an AI *guessing* the purpose of a button (`<button class="btn-primary">`), the application **declares** structured tools — with names, parameters, and contracts. The DOM describes how a page *looks*; WebMCP describes what a page *does*. USP extends that very principle to the real world of services: rather than forcing the agent into scraping and voice synthesis, it offers a **machine-readable contract**. WebMCP grounds the *web* layer of the agentic rise; USP grounds the **service** layer.
+
 Services are not products. You cannot "add to cart" a leaking pipe repair, a medical consultation, or a custom safety net installation without context. Services depend on **Time**, **Geography**, and **Dynamic Logic**.
 
 The **Universal Services Protocol (USP)** is an open standard proposal to define how AI Agents discover, negotiate, quote, and book services in the real world. It provides the structured "handshake" necessary for a legacy SQL database from 1991 to transact natively with a futuristic AI Agent in 2026.
+
+> **Why "holon" and not a root.** USP is the **service sphere** (`u.service`) of a universal **holarchy** `u.*` — not its owner. The concept comes from **Arthur Koestler** (*The Ghost in the Machine*, 1967): a **holon** is at once a **complete whole** (it runs in isolation) and a **part** of a larger organism (it cooperates via contracts), with no absolute top. Organizing the ecosystem as a holarchy gives each domain real autonomy, peer interoperability, and resilience. Grounding and references: [Study — Holon and Holarchy](https://github.com/LucasArgate/uhp/blob/main/docs/estudos/holarquia-holon.md) (PT).
 
 ---
 

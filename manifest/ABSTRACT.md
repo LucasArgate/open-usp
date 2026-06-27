@@ -8,11 +8,15 @@
 
 Estamos entrando na **Era Agêntica** da internet. Large Language Models (LLMs) estão evoluindo de geradores de texto para agentes autônomos capazes de executar tarefas. Enquanto protocolos como o UCP (Universal Commerce Protocol) do Google estão resolvendo efetivamente o problema para o **Varejo** (produtos estáticos, envio padrão, preços fixos), há um grande vácuo na **Economia de Serviços**.
 
+> **A web já está aderindo a essa virada.** Em junho de 2026 o Chrome abriu o *origin trial* do [**WebMCP**](https://developer.chrome.com/blog/ai-webmcp-origin-trial) (a partir do Chrome 149): em vez de a IA *adivinhar* o propósito de um botão (`<button class="btn-primary">`), a aplicação **declara** ferramentas estruturadas — com nomes, parâmetros e contratos. O DOM descreve como a página *parece*; o WebMCP descreve o que a página *faz*. O USP estende exatamente esse princípio ao mundo real de serviços: deixa de obrigar o agente a fazer *scraping* e síntese de voz e passa a oferecer um **contrato legível por máquina**. WebMCP funda a camada *web* da ascensão agêntica; o USP funda a camada de **serviços**. Ver o ensaio [A Web Vai Falar com Agentes](https://www.linkedin.com/pulse/web-vai-falar-com-agentes-o-que-webmcp-muda-para-quem-lucas-argate-vzzif/).
+
 Serviços não são produtos. Você não pode "adicionar ao carrinho" um reparo de tubulação com vazamento, uma consulta médica ou uma instalação de rede de segurança personalizada sem contexto. Serviços dependem de **Tempo**, **Geografia** e **Lógica Dinâmica**.
 
 O **Universal Services Protocol (USP)** é uma proposta de padrão aberto para definir como Agentes de IA descobrem, negociam, cotam e reservam serviços no mundo real. Ele fornece o "handshake" estruturado necessário para que um banco de dados SQL legado de 1991 transacione nativamente com um Agente de IA futurista em 2026.
 
 > **Posição na holarquia universal `u.*`.** O USP é a **esfera de serviços** (`u.service`) — um hólon autossuficiente e, ao mesmo tempo, o **tecido de execução/auditoria** que as demais esferas (UHP, UDP, UGP, UWP, UEP) reutilizam. Como "tudo vem de serviços", o USP é primordial; mas isso **não** o torna a raiz do namespace: ele é um par entre esferas. O campo comum a todas (erros, observabilidade, Ledger) vive em `u.core`. Ver o [mapa de protocolos](https://github.com/LucasArgate/uhp/tree/main/docs/protocolos/mapa-protocolos.md).
+>
+> **Por que "hólon" e não raiz.** O conceito vem de **Arthur Koestler** (*The Ghost in the Machine*, 1967): um **hólon** é, ao mesmo tempo, um **todo completo** (opera isolado) e uma **parte** de um organismo maior (coopera por contratos) — sem um topo absoluto que seja "dono" do sistema. Organizar o ecossistema como **holarquia** (e não como hierarquia com o USP na raiz) dá autonomia real a cada domínio, interoperabilidade entre pares e resiliência. Fundamentação e referências: [Estudo — Hólon e Holarquia](https://github.com/LucasArgate/uhp/blob/main/docs/estudos/holarquia-holon.md).
 
 ---
 

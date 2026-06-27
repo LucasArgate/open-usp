@@ -8,7 +8,9 @@ Este documento define os requisitos e mecanismos de segurança do Universal Serv
 
 ## 2. Security-by-Design para Agentes Autônomos
 
-Diferente de APIs tradicionais onde o cliente é um desenvolvedor confiável, o USP assume que o cliente é um Agente de IA probabilístico (como o **Moldbot** ou outros agentes autônomos). Portanto, a segurança deve ser **Semântica** e **Negociada**.
+Diferente de APIs tradicionais onde o cliente é um desenvolvedor confiável, o USP assume que o cliente é um Agente de IA probabilístico (como o **Mobolt**, o novo OpenClaw, ou outros agentes autônomos). Portanto, a segurança deve ser **Semântica** e **Negociada**.
+
+> **Por que isso fica mais urgente com o WebMCP.** A ascensão agêntica torna explícita uma regra de ouro: **toda ferramenta exposta a um agente é uma porta que alguém vai tentar arrombar** — via *prompt injection* vinda de um e-mail, comentário ou qualquer conteúdo que o agente leia no caminho. O Chrome publica esse alerta junto do [origin trial do WebMCP](https://developer.chrome.com/blog/ai-webmcp-origin-trial) (guia de *tool security*). O USP herda essa responsabilidade no mundo dos serviços: **escopo mínimo por ferramenta**, **confirmação humana para ações de alto risco** (human-in-the-loop) e a premissa de que conveniência para o agente e superfície de ataque são, quase sempre, o mesmo vetor.
 
 ### 2.1 Negociação de Capacidades ("O Handshake")
 
